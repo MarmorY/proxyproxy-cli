@@ -4,6 +4,6 @@ go 1.12
 
 require (
 	github.com/Neothorn23/proxyproxy v0.0.10
-	github.com/Neothorn23/proxyproxy-handler v0.0.1
+	github.com/Neothorn23/proxyproxy-handler v1.0.0
 	github.com/apex/log v1.1.1
 )
