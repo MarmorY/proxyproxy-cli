@@ -1,0 +1,21 @@
+language: go
+
+os: windows
+
+go:
+- 1.12.x
+
+env:
+- GO111MODULE=on GOOS=window GOARCH=amd64
+
+script: 
+  - go build -ldflags "-X main.version=$TRAVIS_BRANCH"
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_OAUTH_TOKEN
+  file:
+    - "proxyproxy-cli.exe"
+  skip_cleanup: true
+  on:
+    tags: true
