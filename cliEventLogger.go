@@ -9,22 +9,21 @@ type cliEventLogger struct {
 	logger *log.Entry
 }
 
-func (l *cliEventLogger) OnProxyEvent(t proxyproxy.ProxyEventType, pc *proxyproxy.ProxyCommunication) {
-	if t == proxyproxy.EventCreatingConnection {
-		l.logger = l.logger.WithFields(log.Fields{"Id": pc.GetID(), "src": pc.GetClientAddr()})
+func (l *cliEventLogger) OnProxyEvent(e *proxyproxy.ProxyEvent) {
+	if e.EventType == proxyproxy.EventCreatingConnection {
+		l.logger = l.logger.WithFields(log.Fields{"Id": e.ID, "src": e.ClientHost})
 	}
-	switch t {
-
+	switch e.EventType {
 	case proxyproxy.EventCreatingConnection:
-		l.logger.Info(proxyproxy.EventText(t))
+		l.logger.Info(proxyproxy.EventText(e.EventType))
 	case proxyproxy.EventNtlmAuthRequestDetected:
-		l.logger.Info(proxyproxy.EventText(t))
+		l.logger.Info(proxyproxy.EventText(e.EventType))
 	case proxyproxy.EventProcessingRequest:
-		l.logger.Infof("Processing request: %s %s", pc.GetCurrentRequest().Method, pc.GetCurrentRequest().RequestURI)
+		l.logger.Infof("Processing request: %s %s", e.Method, e.RequestURI)
 	case proxyproxy.EventConnectionClosed:
-		l.logger.Info(proxyproxy.EventText(t))
+		l.logger.Info(proxyproxy.EventText(e.EventType))
 	default:
-		l.logger.Debugf("%s: %v", proxyproxy.EventText(t), pc)
+		l.logger.Debugf("%s: %v", proxyproxy.EventText(e.EventType), e)
 	}
 
 }

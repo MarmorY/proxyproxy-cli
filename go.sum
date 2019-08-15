@@ -1,5 +1,7 @@
 github.com/Neothorn23/proxyproxy v0.0.10 h1:lioXo/uowEJfRfFNUPLrZmyvKcagVExJBznvtHq3dlA=
 github.com/Neothorn23/proxyproxy v0.0.10/go.mod h1:x7BJFOkjXBZVZV8Diviotpu+q5io+5Rbtwy6Yyrqqv0=
+github.com/Neothorn23/proxyproxy v0.0.11 h1:YXC8KJrnmEjpVmGjI69kHeR09j7HvzC/KTyHzBy3CXY=
+github.com/Neothorn23/proxyproxy v0.0.11/go.mod h1:x7BJFOkjXBZVZV8Diviotpu+q5io+5Rbtwy6Yyrqqv0=
 github.com/Neothorn23/proxyproxy-handler v1.0.0 h1:rWzS+T2zcekeWYcs7HE/WZO5PpdaoFSeZOuBuV4cMgI=
 github.com/Neothorn23/proxyproxy-handler v1.0.0/go.mod h1:B8ilH19N3B+GmwQuJblFXdZ2wpP9Pw1un0D/3WwHgK8=
 github.com/alexbrainman/sspi v0.0.0-20180613141037-e580b900e9f5 h1:P5U+E4x5OkVEKQDklVPmzs71WM56RTTRqV4OrDC//Y4=
